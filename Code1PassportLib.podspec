@@ -39,7 +39,7 @@ TODO: Add long description of the pod here.
   s.dependency 'CryptoSwift', '~> 1.3.8'
 
   # s.resources = "Code1Passport/*.{png,jpeg,jpg,storyboard,xib,xcassets,lic,tflite,txt}"
-  s.resources = ["Code1Passport/res/*.{storyboard, tflite, txt}"]
+  s.resources = ["Code1PassportLib/res/*.{storyboard, tflite, txt}"]
   
   # s.resource_bundles = {
   #   'Code1PassportLib' => ['Code1PassportLib/Assets/*.png']
