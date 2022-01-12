@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04F544F864A49C92DD99449B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		04F544F864A49C92DD99449B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		1BC0C019D59E976577645B81 /* Pods-Code1PassportLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code1PassportLib_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Code1PassportLib_Tests/Pods-Code1PassportLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Code1PassportLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Code1PassportLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,11 +42,11 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		76C2E1A4C6598D468E2A1720 /* Pods-Code1PassportLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code1PassportLib_Tests.release.xcconfig"; path = "Target Support Files/Pods-Code1PassportLib_Tests/Pods-Code1PassportLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7E26EBCB75F0D82D44FC447E /* Pods_Code1PassportLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code1PassportLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		879EBB64FEF8098362905ECA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		879EBB64FEF8098362905ECA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B20D4C4CD839545E8E90DBDE /* Pods-Code1PassportLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code1PassportLib_Example.debug.xcconfig"; path = "Target Support Files/Pods-Code1PassportLib_Example/Pods-Code1PassportLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B71842916E0C2453E19548B4 /* Pods_Code1PassportLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Code1PassportLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF00EDDF3947A89D78D6B44B /* Pods-Code1PassportLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Code1PassportLib_Example.release.xcconfig"; path = "Target Support Files/Pods-Code1PassportLib_Example/Pods-Code1PassportLib_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DFA523770A42F7A1A43D4662 /* Code1PassportLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Code1PassportLib.podspec; path = ../Code1PassportLib.podspec; sourceTree = "<group>"; };
+		DFA523770A42F7A1A43D4662 /* Code1PassportLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Code1PassportLib.podspec; path = ../Code1PassportLib.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,6 @@
 				1BC0C019D59E976577645B81 /* Pods-Code1PassportLib_Tests.debug.xcconfig */,
 				76C2E1A4C6598D468E2A1720 /* Pods-Code1PassportLib_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,10 +212,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 52BTWK2QYM;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 52BTWK2QYM;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -227,6 +228,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -419,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -465,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -478,6 +480,7 @@
 			baseConfigurationReference = B20D4C4CD839545E8E90DBDE /* Pods-Code1PassportLib_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52BTWK2QYM;
 				INFOPLIST_FILE = Code1PassportLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -493,6 +496,7 @@
 			baseConfigurationReference = CF00EDDF3947A89D78D6B44B /* Pods-Code1PassportLib_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52BTWK2QYM;
 				INFOPLIST_FILE = Code1PassportLib/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -507,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1BC0C019D59E976577645B81 /* Pods-Code1PassportLib_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 52BTWK2QYM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -529,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76C2E1A4C6598D468E2A1720 /* Pods-Code1PassportLib_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 52BTWK2QYM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",

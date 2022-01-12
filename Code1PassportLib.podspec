@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Code1PassportLib'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Code1PassportLib.'
+  s.summary          = 'Code1System Passport Module.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -28,9 +28,18 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/code1hong/Code1PassportLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'Code1PassportLib/Classes/**/*'
+  
+  s.swift_version = '5.0'
+
+  s.static_framework = true
+  s.dependency 'TensorFlowLiteSwift', '~> 2.3.0'
+  s.dependency 'CryptoSwift', '~> 1.3.8'
+
+  # s.resources = "Code1Passport/*.{png,jpeg,jpg,storyboard,xib,xcassets,lic,tflite,txt}"
+  s.resources = ["Code1Passport/res/*.{storyboard, tflite, txt}"]
   
   # s.resource_bundles = {
   #   'Code1PassportLib' => ['Code1PassportLib/Assets/*.png']
