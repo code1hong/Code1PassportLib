@@ -62,6 +62,25 @@ class InferenceController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 라이센스 불러오기
+        let filePath = Bundle.main.path(forResource: "Code1License", ofType: "lic")
+        let license = try? String(contentsOfFile: filePath!).replacingOccurrences(of: "\n", with: "")
+
+        // 번들아이디 체크
+        let bundle = Bundle(for: ViewController.self).bundleIdentifier
+
+        //복호화
+        let dec = AES128Util.decrypt(encoded: license!)
+
+//        print(AES128Util.encrypt(string: bundle!))
+
+        // 현재는 print 문이지만 추후에 고객에 맞춰 따라 라이센스 처리 코드 작성
+        if dec == bundle {print("성공")}
+        else {
+            print("라이센스가 유효하지 않습니다.")
+        }
+        
+        
         previewView.frame = CGRect(x: 0 , y: (self.navigationController?.navigationBar.frame.maxY)!, width: self.view.frame.width, height: self.view.frame.width * (4032 / 3024))
         
         naviY = navigationController?.navigationBar.frame.maxY
@@ -141,11 +160,17 @@ class InferenceController: UIViewController {
         let maskLayerColor: UIColor = UIColor.white
         let maskLayerAlpha: CGFloat = 1.0
 
+        
+        let passportGuideRect = CGRect(x: (view.bounds.width - guideImage.frame.width) / 2,
+                                       y: naviY as CGFloat,
+                                       width: guideImage.frame.width,
+                                       height: guideImage.frame.height)
+        
         ////////////// 영역 설정
         // 여권 가이드 박스 시작 X 좌표 = 전체 뷰 영역의 3% 위치
         let passportBoxLocationX = view.bounds.width * 0.03
         // 여권 가이드 박스 시작 Y 좌표 = 전체 뷰 영역의 30% 위치
-        let passportBoxLocationY = guideImage.frame.maxY
+        let passportBoxLocationY = passportGuideRect.maxY
         // 여권 가이드 박스 가로 사이즈 = 전체 영역 94%
         let passportBoxWidthSize = view.bounds.width * 0.94
         // 여권 가이드 박스 세로 사이즈 = 전체 영역 40%
@@ -165,10 +190,7 @@ class InferenceController: UIViewController {
                                 width: passportBoxWidthSize,
                                 height: mrzBoxheightSize)
         
-        let passportGuideRect = CGRect(x: (view.bounds.width - guideImage.frame.width) / 2,
-                                       y: guideImage.frame.minY,
-                                       width: guideImage.frame.width,
-                                       height: guideImage.frame.height)
+        
     
         // 여권 가이드 백그라운드 설정
         let backLayer = CALayer()
@@ -182,13 +204,13 @@ class InferenceController: UIViewController {
         maskLayer.path = path.cgPath
         maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         backLayer.mask = maskLayer
-        self.overlayView.layer.addSublayer(backLayer)
+        self.view.layer.addSublayer(backLayer)
         
         // 여권 가이드 이미지 등록
         let guideLayer = CALayer()
         guideLayer.frame = passportGuideRect
         guideLayer.contents = UIImage(named: "pp_guide.png")?.cgImage
-        self.overlayView.layer.addSublayer(guideLayer)
+        self.view.layer.addSublayer(guideLayer)
 
         // MRZ 가이드 설정
         let mrzLineLayer = CAShapeLayer()
@@ -196,7 +218,7 @@ class InferenceController: UIViewController {
         mrzLineLayer.strokeColor = mrzFrameColor.cgColor
         mrzLineLayer.path = UIBezierPath(roundedRect: mrzRect, cornerRadius: 10.0).cgPath
         mrzLineLayer.fillColor = nil
-        self.overlayView.layer.addSublayer(mrzLineLayer)
+        self.view.layer.addSublayer(mrzLineLayer)
         
         //MRZ 가이드 위치 저장
         guideRect = mrzRect
