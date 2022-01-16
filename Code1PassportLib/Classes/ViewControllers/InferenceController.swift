@@ -67,7 +67,7 @@ class InferenceController: UIViewController {
         let license = try? String(contentsOfFile: filePath!).replacingOccurrences(of: "\n", with: "")
 
         // 번들아이디 체크
-        let bundle = Bundle(for: ViewController.self).bundleIdentifier
+        let bundle = Bundle(for: InferenceController.self).bundleIdentifier
 
         //복호화
         let dec = AES128Util.decrypt(encoded: license!)
