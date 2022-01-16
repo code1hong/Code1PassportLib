@@ -61,26 +61,7 @@ class InferenceController: UIViewController {
     // MARK: View Handling Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 라이센스 불러오기
-        let filePath = Bundle.main.path(forResource: "Code1License", ofType: "lic")
-        let license = try? String(contentsOfFile: filePath!).replacingOccurrences(of: "\n", with: "")
-
-        // 번들아이디 체크
-        let bundle = Bundle(for: InferenceController.self).bundleIdentifier
-
-        //복호화
-        let dec = AES128Util.decrypt(encoded: license!)
-
-//        print(AES128Util.encrypt(string: bundle!))
-
-        // 현재는 print 문이지만 추후에 고객에 맞춰 따라 라이센스 처리 코드 작성
-        if dec == bundle {print("성공")}
-        else {
-            print("라이센스가 유효하지 않습니다.")
-        }
-        
-        
+    
         previewView.frame = CGRect(x: 0 , y: (self.navigationController?.navigationBar.frame.maxY)!, width: self.view.frame.width, height: self.view.frame.width * (4032 / 3024))
         
         naviY = navigationController?.navigationBar.frame.maxY
