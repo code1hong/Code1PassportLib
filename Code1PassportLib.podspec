@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Code1PassportLib'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'Code1System Passport Module.'
 
 # This description is used to generate tags and improve search results.
@@ -40,7 +40,10 @@ TODO: Add long description of the pod here.
 
   # s.resources = "Code1Passport/*.{png,jpeg,jpg,storyboard,xib,xcassets,lic,tflite,txt}"
   
-  s.resources = ["Code1PassportLib/res/passport_s-fp16.tflite", "Code1PassportLib/res/*.{storyboard, tflite, txt}", "classes.txt"]
+#  s.resources = ["Code1PassportLib/res/passport_s-fp16.tflite", "Code1PassportLib/res/*.{storyboard, tflite, txt}", "classes.txt"]
+  s.resources = ["Code1PassportLib/res/passport_s-fp16.tflite", "Code1PassportLib/res/classes.txt", "Code1PassportLib/res/Live.storyboard", "Code1PassportLib/res/nationality.txt", , "Code1PassportLib/res/Code1License.lic"]
+
+#  s.resources = "Resources/**/*.{tflite, txt,storyboard}"
   
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'}
