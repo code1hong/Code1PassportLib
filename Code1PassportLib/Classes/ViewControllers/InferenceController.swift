@@ -62,6 +62,8 @@ class InferenceController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        previewView.frame = CGRect(x: 0 , y: (self.navigationController?.navigationBar.frame.maxY)!, width: self.view.frame.width, height: self.view.frame.width * (4032 / 3024))
+        
         naviY = navigationController?.navigationBar.frame.maxY
         
         guard modelDataHandler != nil else {
